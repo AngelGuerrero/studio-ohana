@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600" fill="none">
+  <rect width="800" height="600" fill="currentColor" fill-opacity="0.05"/>
+  <path d="M400 200C364.654 200 336 228.654 336 264C336 299.346 364.654 328 400 328C435.346 328 464 299.346 464 264C464 228.654 435.346 200 400 200Z" stroke="currentColor" stroke-opacity="0.2" stroke-width="2"/>
+  <path d="M250 450C250 367.157 317.157 300 400 300C482.843 300 550 367.157 550 450" stroke="currentColor" stroke-opacity="0.2" stroke-width="2"/>
+  <rect x="236" y="136" width="328" height="328" rx="16" stroke="currentColor" stroke-opacity="0.1" stroke-width="1" stroke-dasharray="8 8"/>
+  <text x="400" y="380" text-anchor="middle" fill="currentColor" fill-opacity="0.3" font-family="system-ui" font-size="14">Imagen del producto</text>
+</svg>

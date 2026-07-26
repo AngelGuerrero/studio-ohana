@@ -1,0 +1,82 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import data from "@/data/data.json";
+import Navbar from "@/components/react/Navbar.tsx";
+import SmoothScroll from "@/components/react/SmoothScroll.tsx";
+import HeroScene from "@/components/react/HeroScene.tsx";
+import AboutSection from "@/components/react/AboutSection.tsx";
+import StatsSection from "@/components/react/StatsSection.tsx";
+import ProductSection from "@/components/react/ProductSection.tsx";
+import ProcessTimeline from "@/components/react/ProcessTimeline.tsx";
+import TestimonialCarousel from "@/components/react/TestimonialCarousel.tsx";
+import FAQ from "@/components/react/FAQ.tsx";
+import CTASection from "@/components/react/CTASection.tsx";
+import ContactForm from "@/components/react/ContactForm.tsx";
+import Footer from "@/components/react/Footer.tsx";
+
+const marqueeWords = [
+  "Playeras", "Tazas", "Gorras", "Termos", "Vasos", "Tarros", "Rompecabezas",
+];
+---
+
+<BaseLayout>
+  <SmoothScroll client:only="react">
+      <Navbar client:only="react" />
+      <HeroScene client:only="react" />
+
+      {/* Banda marquee 1 */}
+      <div class="marquee-track relative py-6 border-y border-[var(--glass-border)] overflow-hidden">
+        <div class="marquee" style="--marquee-duration: 28s;">
+          {[0, 1].map(() => (
+            <div class="flex items-center shrink-0">
+              {marqueeWords.map((w) => (
+                <span class="font-display text-3xl md:text-5xl uppercase px-8 flex items-center gap-8">
+                  {w}
+                  <span class="w-3 h-3 rounded-full bg-cyan inline-block"></span>
+                </span>
+              ))}
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <AboutSection client:only="react" />
+      <StatsSection client:only="react" />
+
+      <section id="productos" class="section-padding pb-0">
+        <div class="container-custom px-6">
+          <p class="eyebrow text-cyan mb-6">{"// Nuestros productos"}</p>
+          <h2 class="font-display text-[clamp(2.5rem,8vw,7rem)] max-w-4xl">
+            Personaliza <span class="text-stroke">todo</span> tu mundo
+          </h2>
+        </div>
+      </section>
+
+      {data.products.map((product, index) => (
+        <ProductSection product={product} index={index} client:only="react" />
+      ))}
+
+      {/* Banda marquee 2 (inversa) */}
+      <div class="marquee-track relative py-6 border-y border-[var(--glass-border)] overflow-hidden">
+        <div class="marquee reverse" style="--marquee-duration: 34s;">
+          {[0, 1].map(() => (
+            <div class="flex items-center shrink-0">
+              {["Color que dura", "Diseños únicos", "Calidad", "Hecho en México", "Full-color"].map((w) => (
+                <span class="font-display text-3xl md:text-5xl uppercase px-8 flex items-center gap-8 text-neon">
+                  {w}
+                  <span class="w-3 h-3 rounded-full bg-magenta inline-block"></span>
+                </span>
+              ))}
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <ProcessTimeline client:only="react" />
+      <TestimonialCarousel client:only="react" />
+      <FAQ client:only="react" />
+      <CTASection client:only="react" />
+      <ContactForm client:only="react" />
+      <Footer client:only="react" />
+  </SmoothScroll>
+</BaseLayout>

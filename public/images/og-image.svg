@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" fill="none" role="img" aria-label="Studio Ohana — Sublimación personalizada — @stdohana">
+  <defs>
+    <linearGradient id="brand" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#00E5FF"/>
+      <stop offset="0.55" stop-color="#FF1E8E"/>
+      <stop offset="1" stop-color="#C6FF1A"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#FF1E8E" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#FF1E8E" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="#060608"/>
+  <circle cx="980" cy="180" r="320" fill="url(#glow)"/>
+  <circle cx="960" cy="330" r="230" stroke="#00E5FF" stroke-opacity="0.18" stroke-width="1"/>
+  <circle cx="960" cy="330" r="170" stroke="#C6FF1A" stroke-opacity="0.12" stroke-width="1"/>
+
+  <text x="96" y="176" font-family="'Space Grotesk', system-ui, sans-serif" font-size="22" font-weight="500" letter-spacing="6" fill="#00E5FF">// SUBLIMACIÓN PERSONALIZADA</text>
+
+  <text x="96" y="304" font-family="Anton, 'Arial Narrow', Impact, system-ui, sans-serif" font-size="112" letter-spacing="1" fill="#F6F6F8">STUDIO</text>
+  <text x="96" y="410" font-family="Anton, 'Arial Narrow', Impact, system-ui, sans-serif" font-size="112" letter-spacing="1" fill="url(#brand)">OHANA</text>
+
+  <text x="96" y="474" font-family="'Space Grotesk', system-ui, sans-serif" font-size="26" fill="#8C8C99">Donde tus ideas cobran vida · Envíos a todo México</text>
+
+  <rect x="96" y="518" width="196" height="46" rx="23" fill="none" stroke="#C6FF1A" stroke-opacity="0.55"/>
+  <text x="120" y="548" font-family="'Space Grotesk', system-ui, sans-serif" font-size="24" font-weight="600" fill="#C6FF1A">@stdohana</text>
+
+  <text x="330" y="548" font-family="'Space Grotesk', system-ui, sans-serif" font-size="20" fill="#8C8C99">studioohana.com</text>
+</svg>

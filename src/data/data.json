@@ -1,0 +1,217 @@
+{
+  "company": {
+    "name": "Studio Ohana",
+    "tagline": "Donde tus ideas cobran vida",
+    "shortDescription": "Transformamos tus ideas en productos personalizados con sublimación de alta calidad.",
+    "description": "En Studio Ohana, cada producto es una obra única. Utilizamos técnicas de sublimación de última generación para plasmar tus diseños en playeras, tazas, gorras, termos, vasos, tarros y rompecabezas. Creemos en el poder del diseño personalizado para contar historias y crear recuerdos inolvidables.",
+    "logo": "/images/logo.svg",
+    "stats": [
+      { "label": "Productos entregados", "value": 100, "suffix": "+" },
+      { "label": "Clientes satisfechos", "value": 100, "suffix": "+" },
+      { "label": "Personalizado", "value": 100, "suffix": "%" },
+      { "label": "Tipos de producto", "value": 7, "suffix": "" }
+    ],
+    "contact": {
+      "address": "",
+      "phone": "",
+      "email": "hola@studioohana.com",
+      "social": {
+        "handle": "stdohana",
+        "instagram": "https://instagram.com/stdohana",
+        "facebook": "https://facebook.com/stdohana",
+        "tiktok": "https://tiktok.com/@stdohana"
+      }
+    }
+  },
+  "hero": {
+    "title": "Diseñamos",
+    "titleAccent": "tus ideas",
+    "subtitle": "Sublimación personalizada de alta calidad para dar vida a tus proyectos.",
+    "cta": "Ver productos",
+    "ctaSecondary": "Contáctanos",
+    "backgroundImages": []
+  },
+  "products": [
+    {
+      "id": "playeras",
+      "name": "Playeras",
+      "tagline": "Lleva tu estilo contigo",
+      "description": "Playeras personalizadas con sublimación. Diseños vibrantes que no se desgastan, no se agrietan y mantienen su color lavado tras lavado. Ideales para equipos, eventos, emprendimientos o tu estilo personal.",
+      "images": ["/images/productos/playeras-1.jpg", "/images/productos/playeras-2.jpg"],
+      "features": [
+        "100% poliéster",
+        "Talles desde S hasta 3XL",
+        "Sublimación full color",
+        "Resistente a lavados"
+      ],
+      "animation": "slideLeft"
+    },
+    {
+      "id": "tazas",
+      "name": "Tazas",
+      "tagline": "Tu diseño en cada sorbo",
+      "description": "Tazas de cerámica de alta calidad con sublimación. Tu diseño envuelve completamente la taza, creando un producto único y duradero. Perfectas para regalos corporativos, promociones o detalles especiales.",
+      "images": ["/images/productos/tazas-1.jpg"],
+      "features": [
+        "Cerámica de alta calidad",
+        "Sublimación 360°",
+        "Apta para microondas",
+        "Capacidad 330ml"
+      ],
+      "animation": "slideRight"
+    },
+    {
+      "id": "gorras",
+      "name": "Gorras",
+      "tagline": "Con estilo de pies a cabeza",
+      "description": "Gorras personalizadas con diseño envolvente. Desde gorras clásicas hasta modernas trucker caps, todas con sublimación de alta definición que resalta cada detalle de tu diseño.",
+      "images": ["/images/productos/gorras-1.jpg"],
+      "features": [
+        "Algodón y poliéster",
+        "Ajustable talla única",
+        "Diseño envolvente",
+        "Visera curvada"
+      ],
+      "animation": "slideLeft"
+    },
+    {
+      "id": "termos",
+      "name": "Termos",
+      "tagline": "Mantén la temperatura, muestra tu estilo",
+      "description": "Termos de acero inoxidable con sublimación personalizada. Mantienen tus bebidas frías o calientes por horas mientras lucen tu diseño favorito. El regalo perfecto para cualquier ocasión.",
+      "images": ["/images/productos/termos-1.jpg"],
+      "features": [
+        "Acero inoxidable",
+        "Doble pared aislante",
+        "Mantiene temperatura 12h",
+        "Capacidad 500ml"
+      ],
+      "animation": "slideRight"
+    },
+    {
+      "id": "vasos",
+      "name": "Vasos de Vidrio",
+      "tagline": "Elegancia que se ve, se siente y se personaliza",
+      "description": "Vasos de vidrio con sublimación. Ideales para celebrar momentos especiales con un toque único. Bodas, aniversarios, o simplemente para disfrutar tu bebida favorita con estilo.",
+      "images": ["/images/productos/vasos-1.jpg"],
+      "features": [
+        "Vidrio de primera calidad",
+        "Sublimación durable",
+        "Diseño transparente",
+        "Ideal para eventos"
+      ],
+      "animation": "slideLeft"
+    },
+    {
+      "id": "tarros",
+      "name": "Tarros",
+      "tagline": "El detalle que hace la diferencia",
+      "description": "Tarros personalizados con sublimación 360°. Perfectos para el café de cada mañana o como detalle corporativo. Prácticos, elegantes y totalmente personalizables.",
+      "images": ["/images/productos/tarros-1.jpg"],
+      "features": [
+        "Acero inoxidable",
+        "Tapa hermética",
+        "Sublimación 360°",
+        "Capacidad 350ml"
+      ],
+      "animation": "slideRight"
+    },
+    {
+      "id": "rompecabezas",
+      "name": "Rompecabezas",
+      "tagline": "Arma tu historia pieza por pieza",
+      "description": "Rompecabezas personalizados con tus fotos, ilustraciones o diseños favoritos. Convierte tus recuerdos más preciados en un divertido desafío. El regalo experiencial perfecto.",
+      "images": ["/images/productos/rompecabezas-1.jpg"],
+      "features": [
+        "Cartón reciclado",
+        "Piezas de encaje preciso",
+        "Tamaños 500-2000 piezas",
+        "Acabado mate anti-reflejo"
+      ],
+      "animation": "slideLeft"
+    }
+  ],
+  "process": {
+    "title": "¿Cómo trabajamos?",
+    "subtitle": "De tu idea al producto final en 4 pasos simples",
+    "steps": [
+      {
+        "step": 1,
+        "title": "Cuéntanos tu idea",
+        "description": "Háblanos sobre lo que necesitas. Puedes traer tu propio diseño o dejarnos crear uno desde cero para ti.",
+        "icon": "/images/proceso/idea.svg"
+      },
+      {
+        "step": 2,
+        "title": "Diseñamos juntos",
+        "description": "Nuestro equipo de diseño trabaja contigo para crear el arte perfecto. Revisamos, ajustamos y perfeccionamos hasta que quedes satisfecho.",
+        "icon": "/images/proceso/diseno.svg"
+      },
+      {
+        "step": 3,
+        "title": "Producimos",
+        "description": "Utilizamos tecnología de sublimación de última generación para transferir tu diseño con colores vibrantes y durabilidad excepcional.",
+        "icon": "/images/proceso/produccion.svg"
+      },
+      {
+        "step": 4,
+        "title": "Recibe tu pedido",
+        "description": "Empacamos cuidadosamente y te entregamos tu producto personalizado listo para disfrutar o regalar.",
+        "icon": "/images/proceso/entrega.svg"
+      }
+    ]
+  },
+  "testimonials": [
+    {
+      "name": "María García",
+      "role": "Emprendedora",
+      "avatar": "",
+      "text": "Los diseños superaron mis expectativas. La calidad de la sublimación es increíble y el equipo de Studio Ohana hizo que todo el proceso fuera muy fácil."
+    },
+    {
+      "name": "Carlos Mendoza",
+      "role": "Director de Marketing",
+      "text": "Hicimos los uniformes personalizados para nuestro equipo y quedaron espectaculares. La durabilidad es excelente, después de múltiples lavados siguen viéndose como nuevos."
+    },
+    {
+      "name": "Ana Rodríguez",
+      "role": "Organizadora de eventos",
+      "text": "Los vasos personalizados para nuestra boda fueron un éxito. Todos los invitados quisieron llevarse el suyo a casa. ¡Altamente recomendados!"
+    },
+    {
+      "name": "Roberto Sánchez",
+      "role": "Dueño de tienda",
+      "text": "Trabajamos con Studio Ohana para nuestros artículos promocionales. La calidad es consistente y el servicio al cliente es excepcional. Ya son nuestros proveedores oficiales."
+    }
+  ],
+  "faq": [
+    {
+      "q": "¿Cuánto tiempo toma hacer un pedido?",
+      "a": "Dependiendo del producto y la complejidad del diseño, el tiempo de producción es de 3 a 7 días hábiles."
+    },
+    {
+      "q": "¿Puedo usar mi propio diseño?",
+      "a": "¡Claro! Puedes enviarnos tu diseño y nosotros lo preparamos para sublimación. Si no tienes diseño, nuestro equipo puede crear uno para ti."
+    },
+    {
+      "q": "¿Cómo cuido mi producto sublimado?",
+      "a": "Recomendamos lavar en agua fría, no usar blanqueador y evitar planchar directamente sobre el diseño. Seguir estas instrucciones garantiza la durabilidad del estampado."
+    },
+    {
+      "q": "¿Hacen envíos a toda la República?",
+      "a": "Sí, realizamos envíos a todo México. El tiempo de entrega varía según la ubicación, generalmente de 3 a 5 días hábiles."
+    }
+  ],
+  "seo": {
+    "title": "Studio Ohana (@stdohana) | Sublimación Personalizada en México",
+    "description": "Sublimación full-color de alta calidad: playeras, tazas, gorras, termos, vasos, tarros y rompecabezas personalizados. Tu diseño con color que no se desvanece. Envíos a todo México. Síguenos como @stdohana.",
+    "keywords": "sublimación personalizada, productos personalizados México, playeras sublimadas, tazas personalizadas, gorras personalizadas, termos personalizados, vasos personalizados, regalos personalizados, regalos corporativos, artículos promocionales, sublimación full color, Studio Ohana, stdohana, @stdohana",
+    "ogImage": "/images/og-image.png",
+    "ogImageWidth": 1200,
+    "ogImageHeight": 630,
+    "locale": "es_MX",
+    "siteName": "Studio Ohana",
+    "alternateName": "stdohana",
+    "twitterHandle": "@stdohana"
+  }
+}

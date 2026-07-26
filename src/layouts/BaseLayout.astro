@@ -1,0 +1,181 @@
+---
+import data from "@/data/data.json";
+import "@/styles/globals.css";
+
+const seo = data.seo;
+const siteTitle = seo.title || `${data.company.name} | Sublimación Personalizada`;
+const siteDesc = seo.description || data.company.shortDescription;
+const siteName = seo.siteName || data.company.name;
+const locale = seo.locale || "es_MX";
+const handle = data.company.contact.social.handle; // "stdohana"
+const twitterHandle = seo.twitterHandle || `@${handle}`;
+
+// El OG debe ser bitmap: los scrapers (WhatsApp, Facebook, X, LinkedIn) no
+// rasterizan SVG. El .svg se mantiene como fuente editable del .png.
+const ogImg = seo.ogImage || "/images/og-image.png";
+const ogAlt = `${siteName} (@${handle}) — ${data.company.tagline}`;
+
+// URLs absolutas (necesarias para canonical, OG y datos estructurados).
+const SITE = Astro.site ?? new URL("https://studioohana.com");
+const canonical = new URL(Astro.url.pathname, SITE).href;
+const ogImgAbs = new URL(ogImg, SITE).href;
+const logoAbs = new URL(data.company.logo, SITE).href;
+
+// Datos estructurados: negocio local + catálogo de productos.
+const businessSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": `${SITE.href}#business`,
+  name: data.company.name,
+  alternateName: [handle, `@${handle}`],
+  description: siteDesc,
+  slogan: data.company.tagline,
+  url: SITE.href,
+  logo: logoAbs,
+  image: ogImgAbs,
+  priceRange: "$$",
+  telephone: data.company.contact.phone || undefined,
+  email: data.company.contact.email,
+  areaServed: { "@type": "Country", name: "México" },
+  address: data.company.contact.address
+    ? { "@type": "PostalAddress", streetAddress: data.company.contact.address, addressCountry: "MX" }
+    : undefined,
+  sameAs: [
+    data.company.contact.social.instagram,
+    data.company.contact.social.facebook,
+    data.company.contact.social.tiktok,
+  ].filter(Boolean),
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "Productos personalizados",
+    itemListElement: data.products.map((p) => ({
+      "@type": "Offer",
+      itemOffered: { "@type": "Product", name: p.name, description: p.description },
+    })),
+  },
+};
+
+// Sitio + marca: ancla el nombre de usuario "stdohana" como nombre alterno
+// de la marca para búsquedas del handle.
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": `${SITE.href}#website`,
+  url: SITE.href,
+  name: siteName,
+  alternateName: [handle, `@${handle}`],
+  description: siteDesc,
+  inLanguage: "es-MX",
+  publisher: { "@id": `${SITE.href}#business` },
+};
+
+// Datos estructurados: preguntas frecuentes (elegibles para rich results).
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: data.faq.map((f) => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: { "@type": "Answer", text: f.a },
+  })),
+};
+---
+
+<!doctype html>
+<html lang="es-MX" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={siteDesc} />
+    <meta name="keywords" content={seo.keywords} />
+    <meta name="author" content={`${siteName} (@${handle})`} />
+    <meta name="publisher" content={siteName} />
+    <meta name="application-name" content={siteName} />
+    <meta name="generator" content={Astro.generator} />
+    <meta
+      name="robots"
+      content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+    />
+    <meta name="googlebot" content="index, follow" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="theme-color" content="#060608" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#F4F1E9" media="(prefers-color-scheme: light)" />
+
+    <!-- Canonical + idioma + sitemap -->
+    <link rel="canonical" href={canonical} />
+    <link rel="alternate" hreflang="es-MX" href={canonical} />
+    <link rel="alternate" hreflang="x-default" href={canonical} />
+    <link rel="sitemap" type="application/xml" href="/sitemap-index.xml" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href={data.company.logo} />
+    <link rel="apple-touch-icon" href={data.company.logo} />
+
+    <!-- Tema (dark-first) aplicado antes de pintar: sin parpadeo y sin depender de React.
+         Las islas client:only no comparten contexto, así que el tema se maneja vía DOM. -->
+    <script is:inline>
+      (function () {
+        var el = document.documentElement;
+        var t;
+        try { t = localStorage.getItem("theme"); } catch (e) {}
+        if (t !== "light") t = "dark"; // por defecto oscuro
+        el.classList.toggle("dark", t === "dark");
+        el.classList.add("js");
+      })();
+    </script>
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:title" content={siteTitle} />
+    <meta property="og:description" content={siteDesc} />
+    <meta property="og:image" content={ogImgAbs} />
+    <meta property="og:image:secure_url" content={ogImgAbs} />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content={String(seo.ogImageWidth ?? 1200)} />
+    <meta property="og:image:height" content={String(seo.ogImageHeight ?? 630)} />
+    <meta property="og:image:alt" content={ogAlt} />
+    <meta property="og:site_name" content={siteName} />
+    <meta property="og:locale" content={locale} />
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content={twitterHandle} />
+    <meta name="twitter:creator" content={twitterHandle} />
+    <meta name="twitter:title" content={siteTitle} />
+    <meta name="twitter:description" content={siteDesc} />
+    <meta name="twitter:image" content={ogImgAbs} />
+    <meta name="twitter:image:alt" content={ogAlt} />
+
+    <!-- Perfiles sociales (@stdohana) -->
+    {data.company.contact.social.instagram && (
+      <link rel="me" href={data.company.contact.social.instagram} />
+    )}
+    {data.company.contact.social.facebook && (
+      <link rel="me" href={data.company.contact.social.facebook} />
+    )}
+    {data.company.contact.social.tiktok && (
+      <link rel="me" href={data.company.contact.social.tiktok} />
+    )}
+
+    <!-- Datos estructurados (Schema.org) -->
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(businessSchema)}></script>
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(websiteSchema)}></script>
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)}></script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>{siteTitle}</title>
+    <slot name="head" />
+  </head>
+  <body>
+    <div class="grain-overlay" aria-hidden="true"></div>
+    <slot />
+  </body>
+</html>

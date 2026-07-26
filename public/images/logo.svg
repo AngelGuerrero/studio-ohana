@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="180" height="40" viewBox="0 0 180 40" fill="none">
+  <path d="M10 8C10 5.79086 11.7909 4 14 4H24C29.5228 4 34 8.47715 34 14V26C34 31.5228 29.5228 36 24 36H14C11.7909 36 10 34.2091 10 32V8Z" stroke="#C9A96E" stroke-width="1.5"/>
+  <path d="M18 20C18 18.8954 18.8954 18 20 18H22C23.1046 18 24 18.8954 24 20V26C24 27.1046 23.1046 28 22 28H20C18.8954 28 18 27.1046 18 26V20Z" fill="#C9A96E"/>
+  <text x="42" y="26" font-family="'Playfair Display', serif" font-size="22" font-weight="600" fill="currentColor">Studio Ohana</text>
+</svg>

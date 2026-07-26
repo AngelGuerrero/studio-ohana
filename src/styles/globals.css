@@ -1,0 +1,285 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ============================================================
+   STUDIO OHANA — Bold / Maximalista
+   Negro profundo + neón saturado. La sublimación imprime
+   CUALQUIER color: el sitio lo grita.
+   ============================================================ */
+
+@theme {
+  --font-display: "Anton", "Arial Narrow", sans-serif;
+  --font-body: "Space Grotesk", system-ui, sans-serif;
+
+  /* Neón */
+  --color-cyan: #00E5FF;
+  --color-magenta: #FF1E8E;
+  --color-lime: #C6FF1A;
+  --color-violet: #8A5CFF;
+  --color-orange: #FF6B2C;
+
+  /* Tinta / superficies (dark por defecto) */
+  --color-ink: #F6F6F8;
+  --color-ink-dim: #8C8C99;
+  --color-void: #060608;
+  --color-void-alt: #0C0C12;
+}
+
+:root {
+  /* DARK (look canónico) */
+  --bg: #060608;
+  --bg-alt: #0C0C12;
+  --ink: #F6F6F8;
+  --ink-dim: #8C8C99;
+  --line: rgba(255, 255, 255, 0.10);
+  --glass-bg: rgba(255, 255, 255, 0.035);
+  --glass-border: rgba(255, 255, 255, 0.12);
+  --grain-opacity: 0.07;
+  color-scheme: dark;
+}
+
+:root:not(.dark) {
+  /* LIGHT (variante invertida de alto contraste) */
+  --bg: #F4F1E9;
+  --bg-alt: #ECE7DA;
+  --ink: #0A0A0C;
+  --ink-dim: #4A4A55;
+  --line: rgba(0, 0, 0, 0.12);
+  --glass-bg: rgba(255, 255, 255, 0.55);
+  --glass-border: rgba(0, 0, 0, 0.12);
+  --grain-opacity: 0.04;
+  color-scheme: light;
+
+  /* Acentos "neón profundo": legibles como texto sobre crema y como rellenos.
+     Al sobreescribir las variables de tema, TODAS las utilidades
+     (text-cyan, bg-lime, .text-neon, .btn-neon…) se ajustan solas. */
+  --color-cyan: #0B7E9C;
+  --color-magenta: #C0136A;
+  --color-lime: #5E7A00;
+  --color-violet: #5B34D6;
+  --color-orange: #C0480F;
+}
+
+/* ----- Base ----- */
+html {
+  scroll-behavior: auto;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  overflow-x: hidden;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+::selection {
+  background: var(--color-magenta);
+  color: #fff;
+}
+
+/* No-JS / pre-hidratación: nunca dejar contenido invisible */
+html:not(.js) [data-anim] {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+/* ----- Tipografía ----- */
+.font-display {
+  font-family: var(--font-display);
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  line-height: 0.92;
+}
+
+.eyebrow {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.35em;
+}
+
+/* Texto contorneado (relleno transparente, solo borde) */
+.text-stroke {
+  -webkit-text-stroke: 1.5px var(--ink);
+  color: transparent;
+}
+.text-stroke-cyan { -webkit-text-stroke: 1.5px var(--color-cyan); color: transparent; }
+.text-stroke-magenta { -webkit-text-stroke: 1.5px var(--color-magenta); color: transparent; }
+
+/* Gradiente neón en texto */
+.text-neon {
+  background: linear-gradient(100deg, var(--color-cyan), var(--color-magenta) 55%, var(--color-violet));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+/* Texto con acento por-elemento (--accent). En claro se oscurece para contraste. */
+.accent-text { color: var(--accent); }
+:root:not(.dark) .accent-text { color: color-mix(in srgb, var(--accent), #000 42%); }
+
+/* Glow utilitario */
+.glow-cyan { filter: drop-shadow(0 0 18px rgba(0, 229, 255, 0.55)); }
+.glow-magenta { filter: drop-shadow(0 0 18px rgba(255, 30, 142, 0.55)); }
+.glow-lime { filter: drop-shadow(0 0 18px rgba(198, 255, 26, 0.5)); }
+
+/* ----- Glass / paneles ----- */
+.glass {
+  background: var(--glass-bg);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+  border: 1px solid var(--glass-border);
+}
+
+.card-bold {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* ----- Layout ----- */
+.section-padding { padding: 7rem 1.5rem; }
+@media (min-width: 768px) { .section-padding { padding: 9rem 2rem; } }
+@media (min-width: 1024px) { .section-padding { padding: 11rem 2.5rem; } }
+
+.container-custom { max-width: 1320px; margin: 0 auto; }
+.container-wide { max-width: 1600px; margin: 0 auto; }
+
+/* ----- Blobs de color (mancha de tinta neón) ----- */
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  mix-blend-mode: screen;
+  pointer-events: none;
+  will-change: transform;
+}
+:root:not(.dark) .blob { mix-blend-mode: multiply; opacity: 0.5; }
+
+/* ----- Grano / textura (overlay global) ----- */
+/* Canvas 3D del hero: algo translúcido para que el texto siempre lea */
+.hero-canvas { opacity: 0.9; z-index: 0; }
+@media (max-width: 767px) {
+  .hero-canvas { opacity: 0.5; }
+}
+
+/* Velo de legibilidad detrás del texto del hero (sobre el 3D/blobs) */
+.hero-veil {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  background: radial-gradient(
+    120% 90% at 30% 45%,
+    var(--bg) 0%,
+    color-mix(in srgb, var(--bg), transparent 25%) 30%,
+    transparent 62%
+  );
+}
+@media (min-width: 1024px) {
+  .hero-veil {
+    background: radial-gradient(
+      75% 80% at 22% 50%,
+      var(--bg) 0%,
+      color-mix(in srgb, var(--bg), transparent 35%) 28%,
+      transparent 58%
+    );
+  }
+}
+
+.grain-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: var(--grain-opacity);
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ----- Marquee (bandas de texto en movimiento) ----- */
+.marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll var(--marquee-duration, 30s) linear infinite;
+}
+.marquee.reverse { animation-direction: reverse; }
+.marquee-track:hover .marquee { animation-play-state: paused; }
+@keyframes marquee-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* ----- Líneas de grid decorativas ----- */
+.grid-lines {
+  background-image:
+    linear-gradient(var(--line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line) 1px, transparent 1px);
+  background-size: 64px 64px;
+}
+
+/* ----- Botones ----- */
+.btn-neon {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  font-weight: 700;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #060608;
+  background: var(--color-lime);
+  border-radius: 999px;
+  overflow: hidden;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+}
+.btn-neon:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 0 1px var(--color-lime), 0 12px 40px rgba(198, 255, 26, 0.35);
+}
+/* En claro el lima es más oscuro: texto blanco para contraste. */
+:root:not(.dark) .btn-neon { color: #fff; }
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  font-weight: 600;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--ink);
+  border: 1px solid var(--glass-border);
+  border-radius: 999px;
+  transition: all 0.3s ease;
+}
+.btn-ghost:hover {
+  border-color: var(--color-cyan);
+  color: var(--color-cyan);
+  box-shadow: 0 0 24px rgba(0, 229, 255, 0.2);
+}
+
+/* ----- Scrollbar neón ----- */
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(var(--color-cyan), var(--color-magenta));
+  border-radius: 999px;
+}
+
+/* ----- Accesibilidad: reducir movimiento ----- */
+@media (prefers-reduced-motion: reduce) {
+  .marquee { animation: none; }
+  .blob { display: none; }
+  * { scroll-behavior: auto !important; }
+}
