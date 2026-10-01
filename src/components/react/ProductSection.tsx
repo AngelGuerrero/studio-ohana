@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import { reveal, splitReveal, parallaxY } from "../../lib/anime";
+import { whatsappUrl } from "../../lib/contact";
 
 interface Product {
   id: string;
@@ -16,7 +17,7 @@ interface Props {
   index: number;
 }
 
-const ACCENTS = ["#00E5FF", "#FF1E8E", "#C6FF1A", "#8A5CFF", "#FF6B2C"];
+const ACCENTS = ["#D4AD45", "#F4E4B2", "#B98D32", "#A9802A", "#E8CD82"];
 
 export default function ProductSection({ product, index }: Props) {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -53,7 +54,7 @@ export default function ProductSection({ product, index }: Props) {
     <section
       ref={sectionRef}
       id={product.id}
-      className="relative min-h-screen flex items-center section-padding overflow-hidden"
+      className="relative py-16 md:py-24 overflow-hidden"
       style={{ ["--accent" as any]: accent }}
     >
       {/* Número gigante de fondo */}
@@ -66,13 +67,13 @@ export default function ProductSection({ product, index }: Props) {
         {String(index + 1).padStart(2, "0")}
       </div>
 
-      <div className="container-custom w-full relative z-10">
+      <div className="container-custom w-full relative z-10 px-6 md:px-0">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Imagen / panel de color */}
           <div className={isEven ? "lg:order-1" : "lg:order-2"}>
             <div
               ref={imageRef}
-              className="group relative aspect-[4/5] rounded-3xl overflow-hidden border"
+              className="group relative aspect-[4/3] overflow-hidden border bg-[var(--bg-alt)]"
               style={{ borderColor: accent }}
               data-anim
             >
@@ -84,7 +85,7 @@ export default function ProductSection({ product, index }: Props) {
                   <img
                     src={product.images[0]}
                     alt={product.name}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    className="w-full h-full object-cover object-center transition-transform duration-1000 group-hover:scale-[1.035]"
                   />
                 ) : (
                   <div className="relative w-full h-full flex items-center justify-center bg-[var(--bg-alt)]">
@@ -106,7 +107,7 @@ export default function ProductSection({ product, index }: Props) {
 
               {/* Etiqueta flotante */}
               <span
-                className="absolute top-5 left-5 px-3 py-1 rounded-full text-[0.65rem] font-bold uppercase tracking-[0.15em] text-black"
+                className="absolute top-5 left-5 px-3 py-1 text-[0.62rem] font-bold uppercase tracking-[0.17em] text-black"
                 style={{ background: accent }}
               >
                 {String(index + 1).padStart(2, "0")} / Sublimación
@@ -153,10 +154,12 @@ export default function ProductSection({ product, index }: Props) {
             </ul>
 
             <a
-              href="#contacto"
+              href={whatsappUrl(`¡Hola, Studio Ohana! Me gustaría cotizar ${product.name}.`)}
+              target="_blank"
+              rel="noopener noreferrer"
               className="group accent-text inline-flex items-center gap-3 text-sm font-bold uppercase tracking-[0.15em] transition-colors"
             >
-              Solicitar cotización
+              Cotizar por WhatsApp
               <svg
                 width="18"
                 height="18"

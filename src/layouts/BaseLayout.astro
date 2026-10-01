@@ -16,7 +16,7 @@ const ogImg = seo.ogImage || "/images/og-image.png";
 const ogAlt = `${siteName} (@${handle}) — ${data.company.tagline}`;
 
 // URLs absolutas (necesarias para canonical, OG y datos estructurados).
-const SITE = Astro.site ?? new URL("https://studioohana.com");
+const SITE = Astro.site ?? new URL("https://stdohana.vercel.app");
 const canonical = new URL(Astro.url.pathname, SITE).href;
 const ogImgAbs = new URL(ogImg, SITE).href;
 const logoAbs = new URL(data.company.logo, SITE).href;
@@ -108,18 +108,14 @@ const faqSchema = {
     <link rel="sitemap" type="application/xml" href="/sitemap-index.xml" />
 
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href={data.company.logo} />
+    <link rel="icon" type="image/png" href={data.company.logo} />
     <link rel="apple-touch-icon" href={data.company.logo} />
 
-    <!-- Tema (dark-first) aplicado antes de pintar: sin parpadeo y sin depender de React.
-         Las islas client:only no comparten contexto, así que el tema se maneja vía DOM. -->
+    <!-- La identidad actual es negro, blanco y dorado: el sitio se mantiene en modo oscuro. -->
     <script is:inline>
       (function () {
         var el = document.documentElement;
-        var t;
-        try { t = localStorage.getItem("theme"); } catch (e) {}
-        if (t !== "light") t = "dark"; // por defecto oscuro
-        el.classList.toggle("dark", t === "dark");
+        el.classList.add("dark");
         el.classList.add("js");
       })();
     </script>

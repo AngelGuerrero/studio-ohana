@@ -35,7 +35,6 @@ export default function TestimonialCarousel() {
   return (
     <section id="testimonios" className="relative section-padding overflow-hidden">
       <div className="container-custom px-6">
-        <p className="eyebrow text-orange mb-6" data-anim>{"// Testimonios"}</p>
         <h2 ref={titleRef} className="font-display text-[clamp(2.5rem,6vw,5rem)] mb-14 max-w-4xl" data-anim>
           Lo que dicen quienes ya imprimieron con nosotros
         </h2>

@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import { reveal, splitReveal } from "../../lib/anime";
+import { generalWhatsAppUrl } from "../../lib/contact";
 
 export default function CTASection() {
   const headingRef = useRef<HTMLHeadingElement>(null);
@@ -26,12 +27,12 @@ export default function CTASection() {
               ¿Listo para <span className="text-magenta">crear</span>?
             </h2>
             <p ref={textRef} className="text-[var(--ink-dim)] text-lg max-w-xl mx-auto mb-12" data-anim>
-              Cuéntanos tu idea y la convertimos en un producto personalizado con
-              color que no se desvanece.
+              Elige un producto, cuéntanos tu idea y recibe orientación para cotizar
+              sin compromiso por WhatsApp.
             </p>
             <div ref={btnsRef} className="flex flex-wrap items-center justify-center gap-4" data-anim>
-              <a href="#contacto" className="btn-neon">
-                Solicitar cotización
+              <a href={generalWhatsAppUrl} target="_blank" rel="noopener noreferrer" className="btn-neon">
+                Cotizar por WhatsApp
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                   <path d="M5 12h14M13 6l6 6-6 6" />
                 </svg>

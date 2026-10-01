@@ -1,0 +1,5 @@
+# pnpm 10 bloquea por defecto los scripts de dependencias. Astro/Vite necesita
+# esbuild y sharp necesita preparar sus binarios para que el servidor responda.
+allowBuilds:
+  esbuild: true
+  sharp: true

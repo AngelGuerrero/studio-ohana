@@ -17,17 +17,13 @@ export default function AboutSection() {
   return (
     <section ref={sectionRef} className="relative section-padding overflow-hidden">
       <div className="container-custom px-6">
-        <p className="eyebrow text-magenta mb-6" data-anim>
-          {"// Sobre nosotros"}
-        </p>
-
         <div className="grid lg:grid-cols-12 gap-10 items-end">
           <h2
             ref={titleRef}
             className="lg:col-span-7 font-display text-[clamp(2rem,7vw,5.5rem)]"
             data-anim
           >
-            No vendemos productos. <span className="text-cyan">Imprimimos ideas</span>
+            Tu idea merece <span className="text-cyan">un gran acabado</span>
           </h2>
 
           <p
@@ -35,7 +31,7 @@ export default function AboutSection() {
             className="lg:col-span-5 text-[var(--ink-dim)] leading-relaxed text-base md:text-lg"
             data-anim
           >
-            {data.company.description}
+            Personalizamos cada pieza para que el color, el material y el diseño se sientan parte del mismo objeto. Tú compartes la idea; nosotros te acompañamos hasta convertirla en algo listo para usar, regalar o recordar.
           </p>
         </div>
       </div>

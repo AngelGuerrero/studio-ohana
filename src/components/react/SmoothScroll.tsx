@@ -1,11 +1,7 @@
-import { useEffect, type ReactNode } from "react";
+import { useEffect } from "react";
 import Lenis from "lenis";
 
-interface Props {
-  children: ReactNode;
-}
-
-export default function SmoothScroll({ children }: Props) {
+export default function SmoothScroll() {
   useEffect(() => {
     // Respeta prefers-reduced-motion: sin smooth scroll.
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
@@ -31,5 +27,5 @@ export default function SmoothScroll({ children }: Props) {
     };
   }, []);
 
-  return <>{children}</>;
+  return null;
 }

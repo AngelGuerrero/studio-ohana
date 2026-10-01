@@ -1,12 +1,11 @@
 import { useEffect, useRef, useState } from "react";
 import { animate, stagger } from "animejs";
 import data from "../../data/data.json";
-import ThemeToggle from "./ThemeToggle";
+import { generalWhatsAppUrl } from "../../lib/contact";
 
 const navLinks = [
   { label: "Productos", href: "#productos" },
   { label: "Proceso", href: "#proceso" },
-  { label: "Testimonios", href: "#testimonios" },
   { label: "Contacto", href: "#contacto" },
 ];
 
@@ -75,9 +74,9 @@ export default function Navbar() {
       data-anim
     >
       <div className="container-wide flex items-center justify-between px-6 md:px-10 py-4">
-        <a href="#" className="font-display text-xl md:text-2xl tracking-tight flex items-center gap-2">
-          {data.company.name}
-          <span className="w-2 h-2 rounded-full bg-lime glow-lime inline-block" />
+        <a href="#" className="flex items-center gap-3" aria-label={data.company.name}>
+          <span className="brand-logo-frame h-12 w-12 md:h-14 md:w-14"><img src={data.company.logo} alt="" className="brand-logo h-full w-full object-contain" /></span>
+          <span className="font-display text-xl tracking-tight text-[var(--ink)] md:text-2xl">Studio Ohana</span>
         </a>
 
         <div className="hidden md:flex items-center gap-9">
@@ -92,11 +91,10 @@ export default function Navbar() {
               <span className="absolute -bottom-1.5 left-0 h-px w-0 bg-cyan transition-all duration-300 group-hover:w-full" />
             </a>
           ))}
-          <ThemeToggle />
+          <a href={generalWhatsAppUrl} target="_blank" rel="noopener noreferrer" className="btn-neon !px-4 !py-2.5 !text-[0.65rem]">WhatsApp</a>
         </div>
 
         <div className="flex md:hidden items-center gap-4">
-          <ThemeToggle />
           <button
             type="button"
             onClick={() => setMenuOpen(!menuOpen)}
@@ -126,6 +124,7 @@ export default function Navbar() {
               {link.label}
             </a>
           ))}
+          <a href={generalWhatsAppUrl} target="_blank" rel="noopener noreferrer" className="btn-neon w-fit !px-5 !py-3">Cotizar por WhatsApp</a>
         </div>
       </div>
     </nav>

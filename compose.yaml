@@ -1,0 +1,46 @@
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: docker-entrypoint-dev
+    ports:
+      - "4321:4321"
+    volumes:
+      - node_modules:/app/node_modules
+      - pnpm_store:/pnpm/store
+    environment:
+      # El polling hace confiable la detección de cambios en bind mounts de Docker Desktop.
+      CHOKIDAR_USEPOLLING: "true"
+      CHOKIDAR_INTERVAL: "300"
+    init: true
+    develop:
+      watch:
+        - action: sync
+          path: .
+          target: /app
+          ignore:
+            - .git/
+            - .astro/
+            - dist/
+            - node_modules/
+            - package.json
+            - pnpm-lock.yaml
+            - pnpm-workspace.yaml
+            - Dockerfile
+            - compose.yaml
+            - docker-entrypoint-dev.sh
+        - action: rebuild
+          path: package.json
+        - action: rebuild
+          path: pnpm-lock.yaml
+        - action: rebuild
+          path: pnpm-workspace.yaml
+        - action: rebuild
+          path: Dockerfile
+        - action: rebuild
+          path: docker-entrypoint-dev.sh
+
+volumes:
+  node_modules:
+  pnpm_store:

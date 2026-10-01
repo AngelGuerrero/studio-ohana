@@ -4,31 +4,26 @@
     "tagline": "Donde tus ideas cobran vida",
     "shortDescription": "Transformamos tus ideas en productos personalizados con sublimación de alta calidad.",
     "description": "En Studio Ohana, cada producto es una obra única. Utilizamos técnicas de sublimación de última generación para plasmar tus diseños en playeras, tazas, gorras, termos, vasos, tarros y rompecabezas. Creemos en el poder del diseño personalizado para contar historias y crear recuerdos inolvidables.",
-    "logo": "/images/logo.svg",
-    "stats": [
-      { "label": "Productos entregados", "value": 100, "suffix": "+" },
-      { "label": "Clientes satisfechos", "value": 100, "suffix": "+" },
-      { "label": "Personalizado", "value": 100, "suffix": "%" },
-      { "label": "Tipos de producto", "value": 7, "suffix": "" }
-    ],
+    "logo": "/images/studio-ohana-logo-mark.png?v=2",
     "contact": {
       "address": "",
-      "phone": "",
-      "email": "hola@studioohana.com",
+      "phone": "+52 1 720 301 0130",
+      "email": "",
       "social": {
         "handle": "stdohana",
-        "instagram": "https://instagram.com/stdohana",
-        "facebook": "https://facebook.com/stdohana",
-        "tiktok": "https://tiktok.com/@stdohana"
+        "whatsapp": "https://wa.me/5217203010130",
+        "facebook": "https://www.facebook.com/stdohana",
+        "instagram": "",
+        "tiktok": ""
       }
     }
   },
   "hero": {
     "title": "Diseñamos",
     "titleAccent": "tus ideas",
-    "subtitle": "Sublimación personalizada de alta calidad para dar vida a tus proyectos.",
-    "cta": "Ver productos",
-    "ctaSecondary": "Contáctanos",
+    "subtitle": "Playeras, tazas, termos y más con tu diseño. Cuéntanos tu idea y cotiza por WhatsApp.",
+    "cta": "Cotizar por WhatsApp",
+    "ctaSecondary": "Ver productos",
     "backgroundImages": []
   },
   "products": [
@@ -37,7 +32,7 @@
       "name": "Playeras",
       "tagline": "Lleva tu estilo contigo",
       "description": "Playeras personalizadas con sublimación. Diseños vibrantes que no se desgastan, no se agrietan y mantienen su color lavado tras lavado. Ideales para equipos, eventos, emprendimientos o tu estilo personal.",
-      "images": ["/images/productos/playeras-1.jpg", "/images/productos/playeras-2.jpg"],
+      "images": ["/images/generated/playera.png"],
       "features": [
         "100% poliéster",
         "Talles desde S hasta 3XL",
@@ -51,7 +46,7 @@
       "name": "Tazas",
       "tagline": "Tu diseño en cada sorbo",
       "description": "Tazas de cerámica de alta calidad con sublimación. Tu diseño envuelve completamente la taza, creando un producto único y duradero. Perfectas para regalos corporativos, promociones o detalles especiales.",
-      "images": ["/images/productos/tazas-1.jpg"],
+      "images": ["/images/generated/taza.png"],
       "features": [
         "Cerámica de alta calidad",
         "Sublimación 360°",
@@ -65,7 +60,7 @@
       "name": "Gorras",
       "tagline": "Con estilo de pies a cabeza",
       "description": "Gorras personalizadas con diseño envolvente. Desde gorras clásicas hasta modernas trucker caps, todas con sublimación de alta definición que resalta cada detalle de tu diseño.",
-      "images": ["/images/productos/gorras-1.jpg"],
+      "images": ["/images/generated/gorra.png"],
       "features": [
         "Algodón y poliéster",
         "Ajustable talla única",
@@ -79,7 +74,7 @@
       "name": "Termos",
       "tagline": "Mantén la temperatura, muestra tu estilo",
       "description": "Termos de acero inoxidable con sublimación personalizada. Mantienen tus bebidas frías o calientes por horas mientras lucen tu diseño favorito. El regalo perfecto para cualquier ocasión.",
-      "images": ["/images/productos/termos-1.jpg"],
+      "images": ["/images/generated/termo.png"],
       "features": [
         "Acero inoxidable",
         "Doble pared aislante",
@@ -93,7 +88,7 @@
       "name": "Vasos de Vidrio",
       "tagline": "Elegancia que se ve, se siente y se personaliza",
       "description": "Vasos de vidrio con sublimación. Ideales para celebrar momentos especiales con un toque único. Bodas, aniversarios, o simplemente para disfrutar tu bebida favorita con estilo.",
-      "images": ["/images/productos/vasos-1.jpg"],
+      "images": [],
       "features": [
         "Vidrio de primera calidad",
         "Sublimación durable",
@@ -107,7 +102,7 @@
       "name": "Tarros",
       "tagline": "El detalle que hace la diferencia",
       "description": "Tarros personalizados con sublimación 360°. Perfectos para el café de cada mañana o como detalle corporativo. Prácticos, elegantes y totalmente personalizables.",
-      "images": ["/images/productos/tarros-1.jpg"],
+      "images": [],
       "features": [
         "Acero inoxidable",
         "Tapa hermética",
@@ -121,7 +116,7 @@
       "name": "Rompecabezas",
       "tagline": "Arma tu historia pieza por pieza",
       "description": "Rompecabezas personalizados con tus fotos, ilustraciones o diseños favoritos. Convierte tus recuerdos más preciados en un divertido desafío. El regalo experiencial perfecto.",
-      "images": ["/images/productos/rompecabezas-1.jpg"],
+      "images": ["/images/generated/rompecabezas.png"],
       "features": [
         "Cartón reciclado",
         "Piezas de encaje preciso",
@@ -132,31 +127,31 @@
     }
   ],
   "process": {
-    "title": "¿Cómo trabajamos?",
-    "subtitle": "De tu idea al producto final en 4 pasos simples",
+    "title": "Así damos vida a tu idea",
+    "subtitle": "Un proceso cercano, claro y hecho contigo.",
     "steps": [
       {
         "step": 1,
-        "title": "Cuéntanos tu idea",
-        "description": "Háblanos sobre lo que necesitas. Puedes traer tu propio diseño o dejarnos crear uno desde cero para ti.",
+        "title": "Escríbenos",
+        "description": "Cuéntanos qué quieres crear, para quién es y cuántas piezas necesitas.",
         "icon": "/images/proceso/idea.svg"
       },
       {
         "step": 2,
-        "title": "Diseñamos juntos",
-        "description": "Nuestro equipo de diseño trabaja contigo para crear el arte perfecto. Revisamos, ajustamos y perfeccionamos hasta que quedes satisfecho.",
+        "title": "Afinamos tu diseño",
+        "description": "Comparte tu logo, foto o referencia. Si lo necesitas, te ayudamos a aterrizar la idea.",
         "icon": "/images/proceso/diseno.svg"
       },
       {
         "step": 3,
-        "title": "Producimos",
-        "description": "Utilizamos tecnología de sublimación de última generación para transferir tu diseño con colores vibrantes y durabilidad excepcional.",
+        "title": "Lo hacemos realidad",
+        "description": "Preparamos cada pieza con cuidado para que tu diseño luzca como imaginaste.",
         "icon": "/images/proceso/produccion.svg"
       },
       {
         "step": 4,
-        "title": "Recibe tu pedido",
-        "description": "Empacamos cuidadosamente y te entregamos tu producto personalizado listo para disfrutar o regalar.",
+        "title": "Disfrútalo",
+        "description": "Recibe un producto hecho para regalar, usar o convertir tu idea en algo memorable.",
         "icon": "/images/proceso/entrega.svg"
       }
     ]
@@ -200,6 +195,14 @@
     {
       "q": "¿Hacen envíos a toda la República?",
       "a": "Sí, realizamos envíos a todo México. El tiempo de entrega varía según la ubicación, generalmente de 3 a 5 días hábiles."
+    },
+    {
+      "q": "¿Cómo solicito una cotización?",
+      "a": "Escríbenos por WhatsApp con el producto que te interesa, la cantidad y tu idea. Te orientamos para preparar una cotización sin compromiso."
+    },
+    {
+      "q": "¿Qué necesito enviar para personalizar mi pedido?",
+      "a": "Puedes enviarnos tu diseño, logo, foto o una referencia. Si aún no tienes el arte listo, cuéntanos tu idea y te ayudamos a definirlo."
     }
   ],
   "seo": {

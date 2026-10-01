@@ -40,6 +40,32 @@ pnpm dev
 # http://localhost:4321
 ```
 
+### Desarrollo con Docker
+
+Con Docker Desktop iniciado, levanta el entorno de desarrollo con recarga automática:
+
+```bash
+docker compose up --build --watch
+```
+
+Abre `http://localhost:4321`. Compose Watch sincroniza los cambios con el contenedor y Astro aplica hot reload sin necesidad de reconstruir la imagen. Para detenerlo, presiona `Ctrl+C`; para bajar los servicios desde otra terminal:
+
+Si prefieres dejar el contenedor en segundo plano, usa dos terminales:
+
+```bash
+# Terminal 1
+docker compose up -d --build
+
+# Terminal 2
+docker compose watch
+```
+
+```bash
+docker compose down
+```
+
+Las dependencias de Node y la caché de pnpm se conservan en volúmenes de Docker. Después del primer arranque, Compose omite la instalación mientras `package.json` y `pnpm-lock.yaml` no cambien, por lo que inicia directamente el servidor de desarrollo. Si necesitas reinstalarlas completamente, usa `docker compose down -v`.
+
 ## Comandos
 
 | Comando | Acción |

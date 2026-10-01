@@ -3,6 +3,7 @@
   "type": "module",
   "version": "1.0.0",
   "private": true,
+  "packageManager": "pnpm@10.33.2",
   "description": "Sitio web premium de sublimación personalizada — Studio Ohana",
   "scripts": {
     "dev": "astro dev",
