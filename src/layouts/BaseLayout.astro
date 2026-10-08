@@ -1,5 +1,6 @@
 ---
 import data from "@/data/data.json";
+import { collections } from "@/data/catalog";
 import "@/styles/globals.css";
 
 const seo = data.seo;
@@ -7,13 +8,13 @@ const siteTitle = seo.title || `${data.company.name} | Sublimación Personalizad
 const siteDesc = seo.description || data.company.shortDescription;
 const siteName = seo.siteName || data.company.name;
 const locale = seo.locale || "es_MX";
-const handle = data.company.contact.social.handle; // "stdohana"
-const twitterHandle = seo.twitterHandle || `@${handle}`;
+const handle = data.company.contact.social.handle;
+const twitterHandle = seo.twitterHandle || (handle ? `@${handle}` : "");
 
 // El OG debe ser bitmap: los scrapers (WhatsApp, Facebook, X, LinkedIn) no
 // rasterizan SVG. El .svg se mantiene como fuente editable del .png.
 const ogImg = seo.ogImage || "/images/og-image.png";
-const ogAlt = `${siteName} (@${handle}) — ${data.company.tagline}`;
+const ogAlt = siteName;
 
 // URLs absolutas (necesarias para canonical, OG y datos estructurados).
 const SITE = Astro.site ?? new URL("https://studioohana.com");
@@ -27,17 +28,14 @@ const businessSchema = {
   "@type": "LocalBusiness",
   "@id": `${SITE.href}#business`,
   name: data.company.name,
-  alternateName: [handle, `@${handle}`],
+  alternateName: handle ? [handle, `@${handle}`] : undefined,
   description: siteDesc,
-  slogan: data.company.tagline,
+  slogan: data.company.tagline || undefined,
   url: SITE.href,
   logo: logoAbs,
   image: ogImgAbs,
-  priceRange: "$$",
   telephone: data.company.contact.phone || undefined,
-  email: data.company.contact.email,
-  areaServed: { "@type": "Country", name: "México" },
-  address: data.company.contact.address
+  email: data.company.contact.email || undefined,  address: data.company.contact.address
     ? { "@type": "PostalAddress", streetAddress: data.company.contact.address, addressCountry: "MX" }
     : undefined,
   sameAs: [
@@ -48,47 +46,35 @@ const businessSchema = {
   hasOfferCatalog: {
     "@type": "OfferCatalog",
     name: "Productos personalizados",
-    itemListElement: data.products.map((p) => ({
+    itemListElement: collections.map(({ label: name }) => ({
       "@type": "Offer",
-      itemOffered: { "@type": "Product", name: p.name, description: p.description },
+      itemOffered: { "@type": "Product", name },
     })),
   },
 };
 
-// Sitio + marca: ancla el nombre de usuario "stdohana" como nombre alterno
-// de la marca para búsquedas del handle.
+// Datos estructurados del sitio.
 const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
   "@id": `${SITE.href}#website`,
   url: SITE.href,
   name: siteName,
-  alternateName: [handle, `@${handle}`],
+  alternateName: handle ? [handle, `@${handle}`] : undefined,
   description: siteDesc,
   inLanguage: "es-MX",
   publisher: { "@id": `${SITE.href}#business` },
 };
 
-// Datos estructurados: preguntas frecuentes (elegibles para rich results).
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: data.faq.map((f) => ({
-    "@type": "Question",
-    name: f.q,
-    acceptedAnswer: { "@type": "Answer", text: f.a },
-  })),
-};
 ---
 
 <!doctype html>
-<html lang="es-MX" class="dark">
+<html lang="es-MX">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={siteDesc} />
-    <meta name="keywords" content={seo.keywords} />
-    <meta name="author" content={`${siteName} (@${handle})`} />
+    <meta name="author" content={siteName} />
     <meta name="publisher" content={siteName} />
     <meta name="application-name" content={siteName} />
     <meta name="generator" content={Astro.generator} />
@@ -97,8 +83,7 @@ const faqSchema = {
       content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
     />
     <meta name="googlebot" content="index, follow" />
-    <meta name="format-detection" content="telephone=no" />
-    <meta name="theme-color" content="#f8f7f4" />
+    <meta name="theme-color" content="#fbf9f5" />
 
     <!-- Canonical + idioma + sitemap -->
     <link rel="canonical" href={canonical} />
@@ -107,8 +92,8 @@ const faqSchema = {
     <link rel="sitemap" type="application/xml" href="/sitemap-index.xml" />
 
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href={data.company.logo} />
-    <link rel="apple-touch-icon" href={data.company.logo} />
+    <link rel="icon" type="image/png" href="/images/logo-mark.png" />
+    <link rel="apple-touch-icon" href="/images/logo-mark.png" />
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
@@ -126,14 +111,14 @@ const faqSchema = {
 
     <!-- Twitter / X -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content={twitterHandle} />
-    <meta name="twitter:creator" content={twitterHandle} />
+    {twitterHandle && <meta name="twitter:site" content={twitterHandle} />}
+    {twitterHandle && <meta name="twitter:creator" content={twitterHandle} />}
     <meta name="twitter:title" content={siteTitle} />
     <meta name="twitter:description" content={siteDesc} />
     <meta name="twitter:image" content={ogImgAbs} />
     <meta name="twitter:image:alt" content={ogAlt} />
 
-    <!-- Perfiles sociales (@stdohana) -->
+    <!-- Canales confirmados -->
     {data.company.contact.social.instagram && (
       <link rel="me" href={data.company.contact.social.instagram} />
     )}
@@ -147,16 +132,16 @@ const faqSchema = {
     <!-- Datos estructurados (Schema.org) -->
     <script is:inline type="application/ld+json" set:html={JSON.stringify(businessSchema)}></script>
     <script is:inline type="application/ld+json" set:html={JSON.stringify(websiteSchema)}></script>
-    <script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)}></script>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,500&family=DM+Sans:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
 
+    <script is:inline>document.documentElement.classList.add("js");</script>
     <title>{siteTitle}</title>
     <slot name="head" />
   </head>

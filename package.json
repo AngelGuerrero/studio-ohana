@@ -9,7 +9,8 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "typecheck": "astro check"
+    "typecheck": "astro check",
+    "thumbs": "node scripts/make-thumbs.mjs"
   },
   "dependencies": {
     "@astrojs/react": "^4.2.5",

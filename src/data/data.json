@@ -1,10 +1,10 @@
 {
   "company": {
     "name": "Studio Ohana",
-    "tagline": "Donde tus ideas cobran vida",
+    "tagline": "",
     "shortDescription": "Transformamos tus ideas en productos personalizados con sublimación de alta calidad.",
     "description": "En Studio Ohana, cada producto es una obra única. Utilizamos técnicas de sublimación de última generación para plasmar tus diseños en playeras, tazas, gorras, termos, vasos, tarros y rompecabezas. Creemos en el poder del diseño personalizado para contar historias y crear recuerdos inolvidables.",
-    "logo": "/images/logo.svg",
+    "logo": "/images/studio-ohana-original.png",
     "stats": [
       { "label": "Productos entregados", "value": 100, "suffix": "+" },
       { "label": "Clientes satisfechos", "value": 100, "suffix": "+" },
@@ -13,13 +13,13 @@
     ],
     "contact": {
       "address": "",
-      "phone": "",
-      "email": "hola@studioohana.com",
+      "phone": "+52 1 442 342 1815",
+      "email": "",
       "social": {
-        "handle": "stdohana",
-        "instagram": "https://instagram.com/stdohana",
-        "facebook": "https://facebook.com/stdohana",
-        "tiktok": "https://tiktok.com/@stdohana"
+        "handle": "",
+        "instagram": "",
+        "facebook": "https://www.facebook.com/stdohana",
+        "tiktok": ""
       }
     }
   },
@@ -205,13 +205,13 @@
   "seo": {
     "title": "Studio Ohana | Productos personalizados",
     "description": "Personalizamos playeras, tazas, termos, vasos, stickers, etiquetas y otros productos. Explora las categorías y consulta tu pedido con Studio Ohana.",
-    "keywords": "sublimación personalizada, productos personalizados México, playeras sublimadas, tazas personalizadas, gorras personalizadas, termos personalizados, vasos personalizados, regalos personalizados, regalos corporativos, artículos promocionales, sublimación full color, Studio Ohana, stdohana, @stdohana",
-    "ogImage": "/images/og-image.png",
-    "ogImageWidth": 1200,
-    "ogImageHeight": 630,
+    "keywords": "sublimación personalizada, productos personalizados México, playeras sublimadas, tazas personalizadas, gorras personalizadas, termos personalizados, vasos personalizados, regalos personalizados, regalos corporativos, artículos promocionales, sublimación full color, Studio Ohana",
+    "ogImage": "/images/studio-ohana-original.png",
+    "ogImageWidth": 2000,
+    "ogImageHeight": 2000,
     "locale": "es_MX",
     "siteName": "Studio Ohana",
-    "alternateName": "stdohana",
-    "twitterHandle": "@stdohana"
+    "alternateName": "",
+    "twitterHandle": ""
   }
 }
