@@ -19,6 +19,7 @@
     "animejs": "^4.0.0",
     "astro": "^5.7.10",
     "lenis": "^1.2.3",
+    "lucide-react": "^1.52.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "three": "^0.176.0"

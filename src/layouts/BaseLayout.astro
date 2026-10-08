@@ -98,8 +98,7 @@ const faqSchema = {
     />
     <meta name="googlebot" content="index, follow" />
     <meta name="format-detection" content="telephone=no" />
-    <meta name="theme-color" content="#060608" media="(prefers-color-scheme: dark)" />
-    <meta name="theme-color" content="#F4F1E9" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#f8f7f4" />
 
     <!-- Canonical + idioma + sitemap -->
     <link rel="canonical" href={canonical} />
@@ -110,19 +109,6 @@ const faqSchema = {
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href={data.company.logo} />
     <link rel="apple-touch-icon" href={data.company.logo} />
-
-    <!-- Tema (dark-first) aplicado antes de pintar: sin parpadeo y sin depender de React.
-         Las islas client:only no comparten contexto, así que el tema se maneja vía DOM. -->
-    <script is:inline>
-      (function () {
-        var el = document.documentElement;
-        var t;
-        try { t = localStorage.getItem("theme"); } catch (e) {}
-        if (t !== "light") t = "dark"; // por defecto oscuro
-        el.classList.toggle("dark", t === "dark");
-        el.classList.add("js");
-      })();
-    </script>
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
@@ -167,15 +153,12 @@ const faqSchema = {
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,500&family=DM+Sans:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
 
     <title>{siteTitle}</title>
     <slot name="head" />
   </head>
-  <body>
-    <div class="grain-overlay" aria-hidden="true"></div>
-    <slot />
-  </body>
+  <body><slot /></body>
 </html>
