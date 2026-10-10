@@ -1,7 +1,7 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import data from "@/data/data.json";
-import { collections, heroItems, testimonials, thumbOf } from "@/data/catalog";
+import { collections, heroSlides, testimonials, thumbOf } from "@/data/catalog";
 import { ArrowRight, ArrowLeft, ArrowUpRight, Grid2X2, CircleHelp, MessageCircle, X, Plus } from "lucide-react";
 
 const SITE = Astro.site ?? new URL("https://studioohana.com");
@@ -16,8 +16,6 @@ const showTestimonials = testimonials.length > 0;
 
 const faq = [
   { q: "¿Cómo hago mi pedido?", a: "Envíanos por WhatsApp el producto, la cantidad y la fecha en que lo necesitas." },
-  { q: "¿Puedo enviar mi diseño?", a: "Sí. Puedes compartirlo por WhatsApp junto con tu pedido." },
-  { q: "¿Cuánto tarda?", a: "Consulta el plazo por WhatsApp al cotizar tu pedido." },
 ];
 
 const galleryPayload = {
@@ -26,11 +24,6 @@ const galleryPayload = {
   collections: Object.fromEntries(collections.map((collection) => [collection.id, { label: collection.label, items: collection.items.map(({ src, thumb, alt, label }) => ({ src, thumb, alt, label })) }])),
   testimonials: { label: "Clientes", items: testimonials.map(({ src, alt, caption }) => ({ src, thumb: src, alt, label: caption ?? "Cliente de Studio Ohana" })) },
 };
-const heroSlides = [
-  { name: "Termos", main: heroItems.main, back: heroItems.back, side: heroItems.side },
-  { name: "Playeras", main: heroItems.back, back: heroItems.side, side: heroItems.main },
-  { name: "Tazas", main: heroItems.side, back: heroItems.main, side: heroItems.back },
-];
 const year = new Date().getFullYear();
 ---
 
@@ -84,7 +77,6 @@ const year = new Date().getFullYear();
             </span>
             <span class="card-body">
               <span class="card-title">{collection.label}</span>
-              <span class="card-link" aria-hidden="true"><ArrowUpRight size={20} /></span>
             </span>
           </button>
         ))}
@@ -139,7 +131,13 @@ const year = new Date().getFullYear();
       </div>
       <div class="footer-wordmark" aria-hidden="true">ohana</div>
     </div>
-    <div class="footer-bottom"><p>© {year} Studio Ohana</p><a href="#inicio" aria-label="Volver al inicio"><ArrowUpRight size={18} /></a></div>
+    <div class="footer-bottom">
+      <p>© {year} Studio Ohana</p>
+      <div class="footer-meta-actions">
+        <a class="footer-credit" href="https://santsystems.com/" target="_blank" rel="noopener noreferrer">created by <span>santsystems.com</span></a>
+        <a href="#inicio" aria-label="Volver al inicio"><ArrowUpRight size={18} /></a>
+      </div>
+    </div>
   </footer>
 
   <dialog class="viewer" id="viewer" aria-labelledby="viewer-title">

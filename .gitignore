@@ -67,3 +67,4 @@ Desktop.ini
 
 # ---- TypeScript ----
 *.tsbuildinfo
+.vercel

@@ -9,74 +9,47 @@
     "height": 1445
   },
   {
-    "id": 2,
-    "category": "disenos-y-marca",
-    "src": "/images/products/disenos-y-marca/002-disenos-y-marca.webp",
-    "alt": "Disenos Y Marca: producto personalizado de Studio Ohana",
-    "title": "Disenos Y Marca",
-    "width": 1445,
-    "height": 1088
-  },
-  {
     "id": 3,
-    "category": "etiquetas",
+    "category": "stickers",
     "src": "/images/products/disenos-y-marca/003-disenos-y-marca.webp",
-    "alt": "Etiquetas: producto personalizado de Studio Ohana",
-    "title": "Etiquetas",
+    "alt": "Stickers: producto personalizado de Studio Ohana",
+    "title": "Stickers",
     "width": 1445,
     "height": 1088
   },
   {
     "id": 4,
-    "category": "etiquetas",
+    "category": "stickers",
     "src": "/images/products/etiquetas/004-etiquetas.webp",
-    "alt": "Etiquetas: producto personalizado de Studio Ohana",
-    "title": "Etiquetas",
+    "alt": "Stickers: producto personalizado de Studio Ohana",
+    "title": "Stickers",
     "width": 1445,
     "height": 1088
   },
   {
     "id": 5,
-    "category": "etiquetas",
+    "category": "stickers",
     "src": "/images/products/etiquetas/005-etiquetas.webp",
-    "alt": "Etiquetas: producto personalizado de Studio Ohana",
-    "title": "Etiquetas",
+    "alt": "Stickers: producto personalizado de Studio Ohana",
+    "title": "Stickers",
     "width": 1445,
     "height": 1088
   },
   {
     "id": 6,
-    "category": "etiquetas",
+    "category": "stickers",
     "src": "/images/products/etiquetas/006-etiquetas.webp",
-    "alt": "Etiquetas: producto personalizado de Studio Ohana",
-    "title": "Etiquetas",
+    "alt": "Stickers: producto personalizado de Studio Ohana",
+    "title": "Stickers",
     "width": 1088,
     "height": 1445
   },
   {
-    "id": 7,
-    "category": "etiquetas",
-    "src": "/images/products/etiquetas/007-etiquetas.webp",
-    "alt": "Etiquetas: producto personalizado de Studio Ohana",
-    "title": "Etiquetas",
-    "width": 1374,
-    "height": 1145
-  },
-  {
-    "id": 8,
-    "category": "etiquetas",
-    "src": "/images/products/etiquetas/008-etiquetas.webp",
-    "alt": "Etiquetas: producto personalizado de Studio Ohana",
-    "title": "Etiquetas",
-    "width": 1202,
-    "height": 1309
-  },
-  {
     "id": 9,
-    "category": "etiquetas",
+    "category": "stickers",
     "src": "/images/products/etiquetas/009-etiquetas.webp",
-    "alt": "Etiquetas: producto personalizado de Studio Ohana",
-    "title": "Etiquetas",
+    "alt": "Stickers: producto personalizado de Studio Ohana",
+    "title": "Stickers",
     "width": 1445,
     "height": 1088
   },
@@ -153,29 +126,20 @@
     "height": 1088
   },
   {
-    "id": 21,
-    "category": "papeleria",
-    "src": "/images/products/papeleria/021-papeleria.webp",
-    "alt": "Papeleria: producto personalizado de Studio Ohana",
-    "title": "Papeleria",
-    "width": 1088,
-    "height": 1445
-  },
-  {
     "id": 22,
-    "category": "etiquetas",
+    "category": "viniles",
     "src": "/images/products/papeleria/022-papeleria.webp",
-    "alt": "Etiquetas: producto personalizado de Studio Ohana",
-    "title": "Etiquetas",
+    "alt": "Viniles: producto personalizado de Studio Ohana",
+    "title": "Viniles",
     "width": 1449,
     "height": 1086
   },
   {
     "id": 23,
-    "category": "bolsas",
+    "category": "kits",
     "src": "/images/products/bolsas/023-bolsas.webp",
-    "alt": "Bolsas: producto personalizado de Studio Ohana",
-    "title": "Bolsas",
+    "alt": "Kits: producto personalizado de Studio Ohana",
+    "title": "Kits",
     "width": 1312,
     "height": 1199
   },
@@ -261,15 +225,6 @@
     "height": 1445
   },
   {
-    "id": 33,
-    "category": "playeras",
-    "src": "/images/products/playeras/033-playeras.webp",
-    "alt": "Playeras: producto personalizado de Studio Ohana",
-    "title": "Playeras",
-    "width": 1088,
-    "height": 1445
-  },
-  {
     "id": 34,
     "category": "playeras",
     "src": "/images/products/playeras/034-playeras.webp",
@@ -279,36 +234,9 @@
     "height": 1445
   },
   {
-    "id": 35,
-    "category": "playeras",
-    "src": "/images/products/playeras/035-playeras.webp",
-    "alt": "Playeras: producto personalizado de Studio Ohana",
-    "title": "Playeras",
-    "width": 1088,
-    "height": 1445
-  },
-  {
     "id": 36,
     "category": "playeras",
     "src": "/images/products/playeras/036-playeras.webp",
-    "alt": "Playeras: producto personalizado de Studio Ohana",
-    "title": "Playeras",
-    "width": 1088,
-    "height": 1445
-  },
-  {
-    "id": 37,
-    "category": "playeras",
-    "src": "/images/products/playeras/037-playeras.webp",
-    "alt": "Playeras: producto personalizado de Studio Ohana",
-    "title": "Playeras",
-    "width": 1088,
-    "height": 1445
-  },
-  {
-    "id": 38,
-    "category": "playeras",
-    "src": "/images/products/playeras/038-playeras.webp",
     "alt": "Playeras: producto personalizado de Studio Ohana",
     "title": "Playeras",
     "width": 1088,
@@ -378,15 +306,6 @@
     "height": 1445
   },
   {
-    "id": 47,
-    "category": "playeras",
-    "src": "/images/products/playeras/047-playeras.webp",
-    "alt": "Playeras: producto personalizado de Studio Ohana",
-    "title": "Playeras",
-    "width": 1088,
-    "height": 1445
-  },
-  {
     "id": 48,
     "category": "playeras",
     "src": "/images/products/playeras/048-playeras.webp",
@@ -399,15 +318,6 @@
     "id": 49,
     "category": "playeras",
     "src": "/images/products/playeras/049-playeras.webp",
-    "alt": "Playeras: producto personalizado de Studio Ohana",
-    "title": "Playeras",
-    "width": 1088,
-    "height": 1445
-  },
-  {
-    "id": 50,
-    "category": "playeras",
-    "src": "/images/products/playeras/050-playeras.webp",
     "alt": "Playeras: producto personalizado de Studio Ohana",
     "title": "Playeras",
     "width": 1088,
@@ -439,6 +349,24 @@
     "title": "Playeras",
     "width": 1445,
     "height": 1088
+  },
+  {
+    "id": 64,
+    "category": "playeras",
+    "src": "/images/products/playeras/064-playeras.webp",
+    "alt": "Playeras: producto personalizado de Studio Ohana",
+    "title": "Playeras",
+    "width": 1088,
+    "height": 1445
+  },
+  {
+    "id": 66,
+    "category": "playeras",
+    "src": "/images/products/playeras/066-playeras.webp",
+    "alt": "Playeras: producto personalizado de Studio Ohana",
+    "title": "Playeras",
+    "width": 1088,
+    "height": 1445
   },
   {
     "id": 54,
@@ -475,15 +403,6 @@
     "title": "Termos",
     "width": 878,
     "height": 1792
-  },
-  {
-    "id": 58,
-    "category": "playeras",
-    "src": "/images/products/playeras/058-playeras.webp",
-    "alt": "Playeras: producto personalizado de Studio Ohana",
-    "title": "Playeras",
-    "width": 1375,
-    "height": 1144
   },
   {
     "id": 59,
@@ -531,15 +450,6 @@
     "height": 1086
   },
   {
-    "id": 64,
-    "category": "playeras",
-    "src": "/images/products/playeras/064-playeras.webp",
-    "alt": "Playeras: producto personalizado de Studio Ohana",
-    "title": "Playeras",
-    "width": 1088,
-    "height": 1445
-  },
-  {
     "id": 65,
     "category": "playeras",
     "src": "/images/products/playeras/065-playeras.webp",
@@ -547,15 +457,6 @@
     "title": "Playeras",
     "width": 1086,
     "height": 1448
-  },
-  {
-    "id": 66,
-    "category": "playeras",
-    "src": "/images/products/playeras/066-playeras.webp",
-    "alt": "Playeras: producto personalizado de Studio Ohana",
-    "title": "Playeras",
-    "width": 1088,
-    "height": 1445
   },
   {
     "id": 68,
@@ -597,8 +498,8 @@
     "id": 72,
     "category": "regalos-y-arreglos",
     "src": "/images/products/regalos-y-arreglos/072-regalos-y-arreglos.webp",
-    "alt": "Regalos Y Arreglos: producto personalizado de Studio Ohana",
-    "title": "Regalos Y Arreglos",
+    "alt": "Arreglos: producto personalizado de Studio Ohana",
+    "title": "Arreglos",
     "width": 1088,
     "height": 1445
   },
@@ -640,10 +541,10 @@
   },
   {
     "id": 78,
-    "category": "stickers",
+    "category": "viniles",
     "src": "/images/products/stickers/078-stickers.webp",
-    "alt": "Stickers: producto personalizado de Studio Ohana",
-    "title": "Stickers",
+    "alt": "Viniles: producto personalizado de Studio Ohana",
+    "title": "Viniles",
     "width": 1445,
     "height": 1088
   },
@@ -829,19 +730,19 @@
   },
   {
     "id": 100,
-    "category": "vinilos-textiles",
+    "category": "viniles",
     "src": "/images/products/vinilos-textiles/100-vinilos-textiles.webp",
-    "alt": "Vinilos Textiles: producto personalizado de Studio Ohana",
-    "title": "Vinilos Textiles",
+    "alt": "Viniles: producto personalizado de Studio Ohana",
+    "title": "Viniles",
     "width": 1088,
     "height": 1445
   },
   {
     "id": 101,
-    "category": "vinilos-textiles",
+    "category": "viniles",
     "src": "/images/products/vinilos-textiles/101-vinilos-textiles.webp",
-    "alt": "Vinilos Textiles: producto personalizado de Studio Ohana",
-    "title": "Vinilos Textiles",
+    "alt": "Viniles: producto personalizado de Studio Ohana",
+    "title": "Viniles",
     "width": 1088,
     "height": 1445
   },

@@ -2,21 +2,23 @@ import gallery from "@/data/product-gallery.json";
 import testimonialsData from "@/data/testimonials.json";
 
 export const categoryLabels: Record<string, string> = {
-  bolsas: "Bolsas", cuadros: "Cuadros", "disenos-y-marca": "Diseño y marca", etiquetas: "Etiquetas",
-  globos: "Globos", kits: "Kits", papeleria: "Papelería", playeras: "Playeras", "regalos-y-arreglos": "Regalos y arreglos",
-  stickers: "Stickers", tazas: "Tazas", termos: "Termos", vasos: "Vasos", "vinilos-textiles": "Vinil textil",
+  playeras: "Playeras", termos: "Termos", tazas: "Tazas", vasos: "Vasos",
+  stickers: "Stickers", viniles: "Viniles", globos: "Globos", kits: "Kits",
+  "regalos-y-arreglos": "Arreglos", cuadros: "Cuadros",
 };
 
-/** Las categorías con pocas fotos se agrupan para que ninguna tarjeta luzca vacía. */
+// Cada colección corresponde a un solo tipo de producto.
 const collectionDefinitions = [
-  { id: "playeras", label: "Playeras", description: "Para equipos, eventos, negocios o tu estilo personal.", categories: ["playeras"], featured: [102, 24, 40] },
-  { id: "bebidas", label: "Tazas y termos", description: "Regalos útiles que se usan todos los días.", categories: ["termos", "tazas"], featured: [85, 84] },
-  { id: "vasos", label: "Vasos", description: "Detalles para bodas, fiestas y celebraciones.", categories: ["vasos"], featured: [90] },
-  { id: "stickers", label: "Stickers y vinil", description: "Stickers, vinil textil y aplicaciones para tus diseños.", categories: ["stickers", "vinilos-textiles"], featured: [74, 100] },
-  { id: "etiquetas", label: "Etiquetas", description: "Etiquetas para productos, emprendimientos y eventos.", categories: ["etiquetas"], featured: [4] },
-  { id: "fiestas", label: "Globos y kits", description: "Todo para personalizar una celebración.", categories: ["globos", "kits"], featured: [10, 15] },
-  { id: "marca", label: "Diseño y papelería", description: "Logotipos, identidad y papelería para tu marca.", categories: ["disenos-y-marca", "papeleria"], featured: [2, 21] },
-  { id: "regalos", label: "Regalos y detalles", description: "Arreglos, cuadros y bolsas hechos a la medida.", categories: ["regalos-y-arreglos", "cuadros", "bolsas"], featured: [72, 1, 23] },
+  { id: "playeras", label: categoryLabels.playeras, featured: [102, 24, 40] },
+  { id: "termos", label: categoryLabels.termos, featured: [85, 86, 57] },
+  { id: "tazas", label: categoryLabels.tazas, featured: [84, 82, 81] },
+  { id: "vasos", label: categoryLabels.vasos, featured: [90] },
+  { id: "stickers", label: categoryLabels.stickers, featured: [75, 4, 88] },
+  { id: "viniles", label: categoryLabels.viniles, featured: [22, 78, 100] },
+  { id: "globos", label: categoryLabels.globos, featured: [10, 12, 14] },
+  { id: "kits", label: categoryLabels.kits, featured: [15, 20, 83] },
+  { id: "regalos-y-arreglos", label: categoryLabels["regalos-y-arreglos"], featured: [72] },
+  { id: "cuadros", label: categoryLabels.cuadros, featured: [1] },
 ];
 
 export type GalleryItem = { src: string; thumb: string; alt: string; label: string; width: number; height: number };
@@ -27,7 +29,7 @@ export function thumbOf(src: string) {
 }
 
 export const collections = collectionDefinitions.map((collection) => {
-  const raw = collection.categories.flatMap((category) => gallery.filter((item) => item.category === category));
+  const raw = gallery.filter((item) => item.category === collection.id);
   const ordered = [
     ...collection.featured.map((id) => raw.find((item) => item.id === id)).filter((item) => item !== undefined),
     ...raw.filter((item) => !collection.featured.includes(item.id)),
@@ -48,11 +50,11 @@ export const collections = collectionDefinitions.map((collection) => {
 
 export const totalWorks = gallery.length;
 
-export const heroItems = {
-  main: gallery.find((item) => item.id === 85)!,
-  back: gallery.find((item) => item.id === 102)!,
-  side: gallery.find((item) => item.id === 84)!,
-};
+export const heroSlides = ["termos", "playeras", "tazas"].map((category) => {
+  const collection = collections.find((item) => item.id === category)!;
+  const [main, back, side] = collection.items;
+  return { name: collection.label, main, back, side };
+});
 
 export type Testimonial = { src: string; alt: string; width: number; height: number; caption?: string };
 export const testimonials = testimonialsData as Testimonial[];
